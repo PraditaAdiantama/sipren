@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    tes
+    
     @yield('content')
 
     <script src="{{ asset('js/main.js') }}"></script>
