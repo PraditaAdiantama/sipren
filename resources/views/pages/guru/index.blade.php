@@ -55,7 +55,7 @@
                             <path d="M18.5 28.7083H26.1935" stroke="#112A42" stroke-width="4" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-                        <span id="date_time">00-00-00</span>
+                        <span id="date">00-00-00</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 41 44"
@@ -68,7 +68,7 @@
                                 d="M20.3511 41.5059C30.4862 41.5059 38.7022 34.431 38.7022 25.7035C38.7022 16.9761 30.4862 9.90118 20.3511 9.90118C10.2161 9.90118 2 16.9761 2 25.7035C2 34.431 10.2161 41.5059 20.3511 41.5059Z"
                                 stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span class="alert" id="alert_timestamp">00:00:00</span>
+                        <span class="alert" id="timestamp">00:00:00</span>
                     </div>
                 </div>
                 <!-- datetime card -->
