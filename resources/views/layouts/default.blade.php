@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body>
-    
+<body>    
+
+
+    git
     @yield('content')
 
     <script src="{{ asset('js/main.js') }}"></script>
