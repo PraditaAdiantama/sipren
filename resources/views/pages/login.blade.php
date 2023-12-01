@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <div class="container">
+    <div class="container login-page">
         <div id="logo">
             <img src="{{ asset('images/logo.png') }}" alt="Ini Logo" style="width: 173px;">
         </div>
