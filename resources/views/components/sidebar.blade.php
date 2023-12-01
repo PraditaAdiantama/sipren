@@ -47,6 +47,9 @@
                         </svg>
                         <span>Presensi</span>
                     </a>
+                    @if ($title == 'presensi')
+                        <x-presensi.menu />
+                    @endif
                 </li>
                 <li>
                     <a href="">
@@ -78,13 +81,13 @@
                 </li>
             </ul>
         </nav>
-        <div class="footer">
-            <div class="time">
-                @if ($title != 'dashboard')
+        @if ($title != 'dashboard')
+            <div class="footer">
+                <div class="time">
                     <span id="timestamp">07:00:00</span>
-                @endif
-                <span id="date" align="right">11-11-2023</span>
+                    <span id="date" align="right">11-11-2023</span>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 </header>
