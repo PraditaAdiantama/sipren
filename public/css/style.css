@@ -55,6 +55,11 @@ body>div.container {
     align-items: center;
     height: 100vh;
     margin: 0 !important;
+    gap: 50px;
+}
+
+.main>div {
+    width: 40% !important;
 }
 
 #logo {
@@ -330,17 +335,19 @@ main {
 
 .main {
     display: flex;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    gap: 100px;
+    justify-content: space-between;
+    align-items: start;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .main>div {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     flex-direction: column;
     gap: 25px;
+    width: 100% !important;
 }
 
 .card {
@@ -354,20 +361,43 @@ main {
     font-weight: 500;
 }
 
+.welcome>span {
+    font-size: 25px;
+}
+
+.welcome>h3 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.welcome>p {
+    font-size: 25px;
+}
+
 .selayang-padang {
     background-color: var(--slate-100);
+    height: auto;
 }
 
 .selayang-padang p {
-    font-size: 14px;
+    font-size: 17px;
+}
+
+.selayang-padang h3 {
+    font-size: 30px;
 }
 
 .selayang-padang h5 {
     margin: 10px 0;
+    font-size: 15px;
 }
 
 .selayang-padang h5 span {
     font-weight: 500;
+}
+
+.selayang-padang>span{
+    font-size: 30px;
 }
 
 .shadow {
@@ -403,7 +433,7 @@ main {
 .history {
     background-color: var(--blue-400);
     color: var(--text-white);
-    height: 17.3rem;
+    height: 20.5rem;
     overflow: auto;
 }
 
@@ -530,7 +560,6 @@ main {
     grid-area: select;
     height: 31px;
     border-radius: 5px;
-
 }
 
 main.presensi {
@@ -704,7 +733,7 @@ table.table>tbody>tr>td>label {
     border: none;
 }
 
-.sidebar:hover>button.menu-btn{
+.sidebar:hover>button.menu-btn {
     left: 0;
 }
 
@@ -878,7 +907,7 @@ dialog {
         left: 0;
     }
 
-    .sidebar:hover{
+    .sidebar:hover {
         left: 0;
     }
 
@@ -886,90 +915,119 @@ dialog {
         margin-left: 10px;
     }
 
-    .sidebar>button.menu-btn{
+    .sidebar>button.menu-btn {
         display: block;
     }
 
-    .sidebar:hover>button.menu-btn{
+    .sidebar:hover>button.menu-btn {
         opacity: 0;
     }
 
-    .header>.container>div>.user>p{
+    .header>.container>div>.user>p {
         font-size: 1rem;
     }
 
-    .header>.container>h3{
+    .header>.container>h3 {
         font-size: 1.3rem;
     }
 
-    .header>.container>div>.user>span{
+    .header>.container>div>.user>span {
         font-size: 0.8rem;
     }
 
-    .header>.container>div>svg{
+    .header>.container>div>svg {
         width: 40px;
     }
 
-    .hero{
+    .hero {
         height: 120vh;
     }
 
-    .main{
+    .main {
         margin-top: 7rem;
         flex-direction: column;
     }
 
-    .main>div{
+    .main>div {
         width: 300px !important;
     }
 
-    main{
+    main {
         left: 0;
         width: inherit;
     }
 
-    .card.date-time>div>span{
+    .card.date-time>div>span {
         font-size: 1.05rem;
     }
 
-    .card.date-time>div>svg{
+    .card.date-time>div>svg {
         width: 40px;
     }
 
-    .presensi{
+    .presensi {
         max-width: 300px !important;
         margin: 0 auto;
     }
 
-    .presensi>.card-2{
+    .presensi>.card-2 {
         width: 350px !important;
     }
 
-    table.table{
+    table.table {
         max-width: 100px !important;
         margin: 0 auto;
         overflow: hidden !important;
     }
 
-    .table>thead>tr>th{
+    .table>thead>tr>th {
         padding: 0 10px;
     }
 
-    .table>tbody>tr>td{
+    .table>tbody>tr>td {
         padding: 0 10px;
     }
 }
 
 @media (max-width: 375px) {
-    .hero{
+    .hero {
         background-position: center;
         height: 150vh !important;
     }
-    .main{
+
+    .main {
         margin-top: 13rem;
     }
-    .presensi{
+
+    .presensi {
         margin-top: 20px;
+    }
+}
+
+@media (max-width: 1370px) {
+    .main{
+        max-width: 1000px;
+        gap: 30px;
+    }
+
+    .welcome>span{
+        font-size: inherit;
+    }
+
+    .welcome>h3{
+        font-size: 20px;
+    }
+
+    .welcome>p{
+        font-size: inherit;
+    }
+
+    .selayang-padang>h3{
+        font-size: 20px;
+    }
+
+    .selayang-padang>p{
+        font-size: inherit;
     }
 }
 
