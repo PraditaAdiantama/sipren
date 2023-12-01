@@ -1,1 +1,2 @@
 [01-Dec-2023 02:06:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'gd2' (tried: ext\gd2 (The specified module could not be found), ext\php_gd2.dll (The specified module could not be found)) in Unknown on line 0
+[01-Dec-2023 02:49:34 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'gd2' (tried: ext\gd2 (The specified module could not be found), ext\php_gd2.dll (The specified module could not be found)) in Unknown on line 0
