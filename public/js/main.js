@@ -17,7 +17,7 @@ if (dashboardWelcome) {
     document.querySelector('.main .history-date').style.height = dashboardWelcome.clientHeight + 'px';
     setInterval(() => {
         const date = new Date();
-        document.getElementById('alert_timestamp').innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-        document.getElementById('date_time').innerHTML = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+        document.getElementById('timestamp').innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        document.getElementById('date').innerHTML = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
     }, 1000);
 }
