@@ -3,7 +3,7 @@
         <h3>BERANDA</h3>
         <div>
             <div class="user">
-                <p>Nama Guru</p>
+                <p>{{ Auth::user()->guru->nama_guru }}</p>
                 <span>Guru TJKT</span>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 63 64" fill="none">
