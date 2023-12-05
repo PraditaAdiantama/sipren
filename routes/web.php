@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\PresensiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return view('pages.login');
+Route::prefix('auth')->group(function () {
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 });
 
-Route::get('/', [GuruController::class, 'index']);
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', [GuruController::class, 'index']);
+    Route::get('/presensi', [PresensiController::class, 'index'])->name('presensi.index');
+});
