@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('APP_NAME') }} | {{ $title }}</title>
+    <title>{{ env('APP_NAME') }} | {{ ucfirst($title) }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,24 +12,38 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <style>
-        body {
-            background: none;
-        }
+    @if ($title == 'presensi')
+        <style>
+            body {
+                background-image: none;
+                background-color: #E0F2FE;
+                background-size: cover;
+            }
 
-        .hero {
-            left: 0;
-            top: 0;
-            position: absolute;
-            z-index: -10;
-            background-color: lightgray 50%;
-            background-image: url({{ asset('images/bg-2.png') }});
-            background-size: cover;
-            width: 100%;
-            height: 100vh;
-            filter: blur(4px) brightness(70%) !important;
-        }
-    </style>
+            .hero {
+                display: none;
+            }
+        </style>
+    @else
+        <style>
+            body {
+                background: none;
+                height: 100%;
+            }
+
+            .hero {
+                left: 0;
+                top: 0;
+                position: absolute;
+                z-index: -10;
+                background-color: lightgray 50%;
+                background-image: url("{{ asset('images/bg-2.png') }}");
+                background-size: cover;
+                width: 100%;
+                filter: blur(4px) brightness(70%) !important;
+            }
+        </style>
+    @endif
 </head>
 
 <body>
@@ -38,7 +52,7 @@
     @include('components.sidebar')
     @include('components.navbar')
 
-    <main>
+    <main class="{{ $title == 'presensi' ? 'presensi' : '' }}">
         @yield('content')
     </main>
 
