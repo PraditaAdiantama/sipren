@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="d-flex justify-center items-center" style="height: 100vh">
+    <div class="d-flex justify-center items-center">
         <div class="main">
-            <div style="width: 450px;" class="welcome-selayang">
+            <div class="welcome-selayang">
                 <!-- welcome cart -->
                 <div class="card welcome shadow">
                     <span>Selamat Datang,</span>
-                    <h3>Raditya Wicaksono, S. Kom</h3>
+                    <h3>{{ Auth::user()->guru->nama_guru }}</h3>
                     <p>Guru TJKT</p>
                 </div>
                 <!-- welcome cart -->
@@ -24,7 +24,7 @@
                 </div>
                 <!-- selayang padang -->
             </div>
-            <div style="width: 450px;" class="history-date">
+            <div class="history-date">
                 <!-- datetime card -->
                 <div class="card date-time shadow">
                     <div>
