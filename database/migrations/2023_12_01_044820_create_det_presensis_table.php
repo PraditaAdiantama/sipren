@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('det_presensis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_siswa')->references('nis')->on('siswas');
+            $table->foreignId('nis_siswa')->references('nis')->on('siswas');
             $table->foreignId('id_presensi')->references('id')->on('presensis');
             $table->boolean('keterangan');
             $table->timestamps();

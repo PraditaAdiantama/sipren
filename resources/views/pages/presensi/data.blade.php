@@ -85,7 +85,7 @@
         </form>
         <h3>Daftar Siswa Tidak Hadir</h3>
         <!-- table -->
-        <x-presensi.data.unpresensied-table detail_presensi=$detail_presensi />
+        <x-presensi.data.unpresensied-table :detail_presensi=$detail_presensi />
         <!-- table -->
     </div>
     <div class="d-flex" style="align-items: end;padding-right: 10px;height: fit-content !important;">

@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetPresensi;
 use App\Models\Mapel;
+use App\Models\Presensi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Validator;
 
 class MapelController extends Controller
 {
@@ -28,7 +33,39 @@ class MapelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nama_mapel' => "string|required|min:1",
+            'deskripsi' => "string|required|min:1",
+            'id_kelas' => "string|required|exists:kelas,id"
+        ]);
+
+        if($validator->fails()) return redirect()->back()->withErrors($validator->errors());
+
+        $mapel = Mapel::create($validator->validated());
+
+        $presensiData = [
+            'kode_guru' => Auth::user()->kode_guru,
+            'id_mapel' => $mapel->id,
+            'id_kelas' => $request->id_kelas,
+            'deskripsi' => $request->deskripsi,
+            'hari_tanggal' => date('Y-m-d')
+        ];
+
+        $presensi = Presensi::create($presensiData);
+
+        $siswas = $mapel->kelas->first()->siswas;
+
+        $detPresensi = [];
+
+        foreach($siswas as $siswa){
+            array_push($detPresensi, DetPresensi::create([
+                'nis_siswa' => $siswa->nis,
+                'id_presensi' => $presensi->id,
+                'keterangan' => 2
+            ]));
+        }
+
+        return redirect()->route('presensi-data', $presensi->id);
     }
 
     /**

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('username');
             $table->string('password');
             $table->boolean('level');
-            $table->foreignId('id_guru')->references('id')->on('gurus');
+            $table->string('kode_guru');
+            $table->foreign('kode_guru')->references('kode_guru')->on('gurus');
             $table->timestamps();
         });
     }

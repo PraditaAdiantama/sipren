@@ -12,7 +12,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    @if ($title == 'presensi')
+    @if ($title != 'dashboard')
         <style>
             body {
                 background-image: none;
@@ -52,10 +52,11 @@
     @include('components.sidebar')
     @include('components.navbar')
 
-    <main class="{{ $title == 'presensi' ? 'presensi' : '' }}">
+    <main class="{{ $title == 'presensi' ? 'presensi' : '' }} {{$title == 'presensi-data' ? 'presensi-data' : ''}}">
         @yield('content')
     </main>
 
+    <script src="{{ asset('js/utils.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
 

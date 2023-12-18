@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $with = [
+        'guru'
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -42,4 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function guru(){
+        return $this->hasOne(Guru::class, 'kode_guru', 'kode_guru');
+    }
 }

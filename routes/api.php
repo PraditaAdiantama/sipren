@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\PresensiController;
+use App\Http\Controllers\KelasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('classes', [PresensiController::class, 'classes']);
+Route::post('subjects', [PresensiController::class, 'subjects']);

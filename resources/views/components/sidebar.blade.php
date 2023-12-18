@@ -47,7 +47,7 @@
                         </svg>
                         <span>Presensi</span>
                     </a>
-                    @if ($title == 'presensi')
+                    @if ($title == 'presensi' || $title == 'presensi-data')
                         <x-presensi.menu />
                     @endif
                 </li>
@@ -83,6 +83,62 @@
         </nav>
         @if ($title != 'dashboard')
             <div class="footer">
+                @if ($title == 'presensi-data')
+                    <div class="status">
+                        <div class="head">
+                            <h3>Status</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 13"
+                                fill="none" id="status-hide">
+                                <path d="M2 2L10.5 10.5L19 2" stroke="#949494" stroke-width="3.30838"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <div>
+                                <label>Judul Materi</label>
+                                <span style="width: 100px">{{ $mapel->nama_mapel }}</span>
+                            </div>
+                            <div>
+                                <label>Deskripsi</label>
+                                <span style="width: 100px">{{ $mapel->deskripsi }}</span>
+                            </div>
+                            <div>
+                                <label>Tanggal</label>
+                                <span>{{ $mapel->created_at->format('d-m-y') }}</span>
+                            </div>
+                            <div>
+                                <label>Lama Sesi</label>
+                                <span id="lama-sesi"></span>
+                            </div>
+                            <div>
+                                <label>Waktu Mulai</label>
+                                <span>{{ $mapel->created_at->format('H:i') }}</span>
+                            </div>
+                            <div>
+                                <label>Waktu Selesai</label>
+                                <span id="wak"></span>
+                            </div>
+                            <div>
+                                <label>Siswa Waktu</label>
+                                <span>C#</span>
+                            </div>
+                            <div>
+                                <label>Jumlah Hadir</label>
+                                <span>{{ count($presensied) }}</span>
+                            </div>
+                            <div>
+                                <label>Jumlah Siswa</label>
+                                <span>{{ count($presensied) + count($detail_presensi) }}</span>
+                            </div>
+                            <div class="teacher">
+                                <label>Guru Pengampu</label>
+                                <div>
+                                    <li>{{ Auth::user()->guru->nama_guru }}</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <div class="time">
                     <span id="timestamp">07:00:00</span>
                     <span id="date" align="right">11-11-2023</span>
